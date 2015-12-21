@@ -1,0 +1,20 @@
+/* Minha Quebrada :D
+   ================================================================*/
+.csslogo{
+	margin:0%;
+	padding:2%;
+	border:5px solid #000000;
+	width:100px;
+	overflow:auto;
+	text-align:center;
+	margin-bottom:10%;
+	font-weight:bolder;
+}
+.section{
+	padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.button{
+	/*background-color:#777777;*/
+}
