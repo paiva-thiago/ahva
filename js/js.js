@@ -18,4 +18,21 @@ $(document).ready(function(){
     window.location.hash = hash;
     });
   });
+    $("#COPA").click(function(){
+        var sLog = $("#txtLog").val();
+        var sPwd = $("#txtPwd").val();
+        $.post("motor/login.php",{"txtLog":sAno,"txtPwd":sPwd}).done(function(json){
+            JSON.parse('json', function(k, v) {
+              if (k === 'code') { 
+                  if (v>0){
+                      alert("Erro no login!");
+                  }else{
+                      alert("Login passou!");
+                  }
+              } 
+            });                           
+        });
+        return true;
+    });
+
 });
