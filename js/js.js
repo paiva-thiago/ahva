@@ -18,10 +18,10 @@ $(document).ready(function(){
     window.location.hash = hash;
     });
   });
-    $("#COPA").click(function(){
+    $("#btLogar").click(function(){
         var sLog = $("#txtLog").val();
         var sPwd = $("#txtPwd").val();
-        $.post("motor/login.php",{"txtLog":sAno,"txtPwd":sPwd}).done(function(json){
+        $.post("http://thiagopaiva.com/ahva/motor/login.php",{"txtLog":sLog,"txtPwd":sPwd}).done(function(json){
             JSON.parse('json', function(k, v) {
               if (k === 'code') { 
                   if (v>0){
