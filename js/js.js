@@ -21,17 +21,19 @@ $(document).ready(function(){
     $("#btLogar").click(function(){
         var sLog = $("#txtLog").val();
         var sPwd = $("#txtPwd").val();
-        $.post("motor/login.php",{"txtLog":sLog,"txtPwd":sPwd}).done(function(jason){
-            JSON.parse(jason, function(k, v) {
-              if (k === 'code') { 
-                  if (v>0){
-                      alert("Erro no login!");
-                  }else{
-                      alert("Login passou!");
-                  }
-              } 
-            });                           
-        });
+         $.ajax({
+			type: "POST",
+			url: "motor/login.php",
+			data: "txtLog="+ sLog +"&txtPwd="+ sPwd,
+			success: function(data){
+				var json = $.parseJSON(data);
+				if(json.code>0){
+					alert("Erro no login!");
+				}else{
+					alert("Login passou!");
+                }
+			}
+		});		
         return true;
     });
 
