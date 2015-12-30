@@ -21,8 +21,8 @@ $(document).ready(function(){
     $("#btLogar").click(function(){
         var sLog = $("#txtLog").val();
         var sPwd = $("#txtPwd").val();
-        $.post("http://thiagopaiva.com/ahva/motor/login.php",{"txtLog":sLog,"txtPwd":sPwd}).done(function(json){
-            JSON.parse('json', function(k, v) {
+        $.post("motor/login.php",{"txtLog":sLog,"txtPwd":sPwd}).done(function(jason){
+            JSON.parse(jason, function(k, v) {
               if (k === 'code') { 
                   if (v>0){
                       alert("Erro no login!");
