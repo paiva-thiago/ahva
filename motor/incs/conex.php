@@ -1,9 +1,9 @@
 <?php
 
-    define( 'MYSQL_HOST', 'mysql.thiagopaiva.com' );
-    define( 'MYSQL_USER', 'thiagopaiva' );
-    define( 'MYSQL_PASSWORD', 's4r1u5' );
-    define( 'MYSQL_DB_NAME', 'thiagopaiva' );
+    define( 'MYSQL_HOST', 'localhost' );
+    define( 'MYSQL_USER', 'root' );
+    define( 'MYSQL_PASSWORD', '' );
+    define( 'MYSQL_DB_NAME', 'base' );
     
     function liga(){
         $PDO=false;
@@ -14,6 +14,7 @@
         catch ( PDOException $e )
         {
             echo 'Erro ao conectar com o MySQL: ' . $e->getMessage();
+            die();
         }   
         return $PDO;        
     }

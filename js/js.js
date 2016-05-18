@@ -19,18 +19,18 @@ $(document).ready(function(){
     });
   });
     $("#btLogar").click(function(){
-        var sLog = $("#txtLog").val();
+        var sLog = $("#txtLogin").val();
         var sPwd = $("#txtPwd").val();
          $.ajax({
 			type: "POST",
 			url: "motor/login.php",
 			data: "txtLog="+ sLog +"&txtPwd="+ sPwd,
 			success: function(data){
-				var json = $.parseJSON(data);
+                var json = $.parseJSON(data);
 				if(json.code>0){
-					alert("Erro no login!");
+					alert(json.msg);//alert("Erro no login! \n Cod.:"+json.code+" \n '"+sLog+"'");
 				}else{
-					alert("Login passou!");
+					window.location.href="ctrl.html";//alert("Login passou!");
                 }
 			}
 		});		
